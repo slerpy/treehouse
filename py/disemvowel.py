@@ -5,21 +5,12 @@
 # disemvowel.py
 # --------------------
 # Super useful script to remove vowels from any given words.
-
-# Try and except blocks which removes vowels from any given words. Return
-# list of words with first letter capitalized.
 #
 # @author Shaden, 0x899319D4251502BA
 # @date  2 December 2015
 # @version 0.0.1
 ##############################################################################
 
-# Split sentence into a list of words
-#     Split each word into a list(word)
-#         Remove each vowel from keyword
-#             reassemble voweless word
-#     reassemble sentence
-# capitalize each sentence.
 
 
 phrase = "Man is least himself when he talks in his own person. Give him a mask, and he will tell you the truth."
