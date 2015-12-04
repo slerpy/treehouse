@@ -48,17 +48,23 @@ def devowel(word):
             word.remove(each)
     return(word)
 
+def fix(word):
+    return("".join(word))
+
+
 def bringing_it_together():
-    reassembled = []
+    reassembled_sentence = ""
+    reassembled_words = []
     brokeass_words = []
     split_phrase = phrase_split(phrase)
     for each in split_phrase:
         brokeass_words.append(word_split(each))
     print(brokeass_words)
     for each in brokeass_words:
-        reassembled.append(devowel(each))
-
-    print(reassembled)
+        reassembled_words.append(devowel(each))
+    for each in reassembled_words:
+        reassembled_sentence += "".join(each) + " "
+    print (reassembled_sentence)
 
 
 
