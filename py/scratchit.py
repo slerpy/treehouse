@@ -11,11 +11,16 @@
 # @version 0.0.1
 ##############################################################################
 
-broke = ['a', 'b', 'c']
-def fix():
-    return("".join(broke))
+def first_4(iter):
+    return(iter[:4])
 
-print(fix())
+def odds(iter):
+    return(iter[1::2])
+
+def first_and_last_4(iter):
+    return(iter[0:4] + iter[-4:])
+
+print(first_and_last_4('123456789'))
 
 
 
