@@ -11,26 +11,15 @@
 # @version 0.0.1
 ##############################################################################
 
+def main():
+    underscore = ["_", "_", "_", "_", "_", "_"]
+    word = "shaden"
+    word_into_list = list(word)
+    index = 0
+    for e in word_into_list:
+
+        print(index)
+        index += 1
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+main()
