@@ -36,7 +36,11 @@ def letter_replace(letter, guessed_letters):
         if letter == item:
             item.replace()
 
-
+def play_again():
+    if input("Would you like to play again?") == "y":
+        main()
+    else:
+        exit()
 
 
 def main():
@@ -47,14 +51,15 @@ def main():
     wrong_letters = []
     game_word_list = list(game_word)
     guessed_letters = do_underscore(game_word)
+    guess_count = 0
 
     print(welcome_message)
-    while True:
+    while "_" in guessed_letters:
         user_input = input("> ")
-        if "_" not in guessed_letters:
-            print("GRATS!!! YOU WON!!")
-            print(welcome_message)
-        elif user_input == "QQ":
+        # if "_" not in guessed_letters:
+        #     print("GRATS!!! YOU WON!!")
+        #     print(welcome_message)
+        if user_input == "QQ":
             print("Awww. See ya next time!")
             break
         elif user_input == "?":
@@ -62,30 +67,38 @@ def main():
             print(game_word)
             print("".join(guessed_letters))
         else:
-            if letter_flag(user_input, game_word) == True:
-                print("Good guess!")
-                index = 0
-                for letter in game_word_list:
-                    if user_input == letter:
-                         guessed_letters[index] = user_input
-                    index += 1
+            if guess_count < 8:
+                if letter_flag(user_input, game_word) is True:
+                    print("Good guess!")
+                    index = 0
+                    for letter in game_word_list:
+                        if user_input == letter:
+                            guessed_letters[index] = user_input
+                        index += 1
+                    print("Your correct letters are {}".format("".join(guessed_letters)))
+                    print("Your incorrect guesses are, {}".format("".join(wrong_letters)))
 
-                print("".join(guessed_letters))
+
+                    continue
+
+
+                else:
+                    guess_count += 1
+                    print("Sorry, Your letter is not in the word.")
+                    wrong_letters.append(user_input)
+                    wrong_letters.sort()
+                    print("Your correct letters are " + "".join(guessed_letters))
+                    print("Your incorrect guesses are, {}".format(" ".join(wrong_letters)))
+                    print("You have {} guesses left.".format(8 - guess_count))
+            else:
+                print(guessed_letters)
+                print(guess_count)
+                print("You have used up all 8 of your guesses. :(")
                 continue
 
-
-            else:
-                print("Sorry, Your letter is not in the word.")
-                wrong_letters.append(user_input)
-                wrong_letters.sort()
-                print(wrong_letters)
-
-
-
-
-
-
-
+    else:
+        print("grats! you won!")
+        play_again()
 main()
 
 # draw spaces

@@ -10,16 +10,8 @@
 # @date 29 November 2015
 # @version 0.0.1
 ##############################################################################
+import random
+def random_item(iter):
+    print(iter[random.randint(0,len(iter) -1)])
 
-def main():
-    underscore = ["_", "_", "_", "_", "_", "_"]
-    word = "shaden"
-    word_into_list = list(word)
-    index = 0
-    for e in word_into_list:
-
-        print(index)
-        index += 1
-
-
-main()
+random_item("Random String")
