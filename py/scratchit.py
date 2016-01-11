@@ -33,4 +33,17 @@ def ok():
             print("{} is odd".format(randomy))
             start -= 1
 
-ok()
+
+def word_count(strang):
+    easify = strang.lower().split()
+    easify_dict = {}
+    for each in easify:
+        if each in easify_dict:
+            easify_dict[each] += 1
+        else:
+            easify_dict[each] = 1
+    return easify_dict
+
+
+word_count("I am what I am.")
+
