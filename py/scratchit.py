@@ -104,6 +104,9 @@ places_traveled(traveler_dictionary)
 
 
 
+def stringcases(string):
+    return string.lower(), string.upper(), string.title(), string[::-1]
+
 
 
 
