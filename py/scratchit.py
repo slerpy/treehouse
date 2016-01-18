@@ -99,7 +99,7 @@ def places_traveled(travelers):
             traveled_list.append(places)
     print(traveled_list)
 
-places_traveled(traveler_dictionary)
+#places_traveled(traveler_dictionary)
 
 
 
@@ -107,6 +107,13 @@ places_traveled(traveler_dictionary)
 def stringcases(string):
     return string.lower(), string.upper(), string.title(), string[::-1]
 
+
+def combo(tup1, tup2):
+    return list(zip(tup1, tup2))
+
+
+
+combo([1,2,3,4,5], "oh my")
 
 
 
