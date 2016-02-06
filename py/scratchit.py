@@ -112,8 +112,17 @@ def combo(tup1, tup2):
     return list(zip(tup1, tup2))
 
 
+def nchoices(intg, itr):
+    lst = []
+    count = intg
+    while count > 0:
+        lst.append(random.choice(itr))
+        count -= 1
+        continue
+    return lst
 
-combo([1,2,3,4,5], "oh my")
+
+print(nchoices(5, "abcdefghijklmnop"))
 
 
 
